@@ -187,3 +187,49 @@ These two "imports" are required for the RPC mechanism to work. Remember that it
 ===Adding the client side code===
 Download the sample GWT java source code [http://gwtphprpc.googlecode.com/files/java_src_tutorial.zip here].
 Unzip the 3 source files (GwtPhpRpcSample.java, MainPanel.ui.xml, MainPanel.java) and copy them in the "src/com/test/client" directory of your project. The project space should now look like this:
+
+http://gwtphprpc.googlecode.com/files/step6.png
+
+These three source files simply implements the GWT GUI behavior.
+Browse the content of the code to see how the generated code (especially the MyRemoteServiceClient proxy code is used).
+
+Example: line 21 ro 26 in GwtPhpRpcSample.java
+{{{
+		mainPanel.actionButton1.addClickHandler(new ClickHandler() {
+			@Override
+			public void onClick(ClickEvent event) {
+				callRPC1();
+			}
+		});
+}}}
+and
+{{{
+private final void callRPC1() {
+		String l_url = "http://localhost/rpc/getPersons_server.php";
+		MyRemoteServiceClient.getPersons("http://127.0.0.1:8888/proxy?url="
+				+ l_url, new AsyncCallback<JavaScriptObject>() {
+			@Override
+			public void onFailure(Throwable caught) {
+				mainPanel.displayTextarea.setText("ERROR: "
+						+ caught.getMessage());
+			}
+
+			@Override
+			public void onSuccess(JavaScriptObject result) {
+				JsArray<Person> l_persons = result.cast();
+				StringBuffer l_sb = new StringBuffer();
+				l_sb.append(dumpPerson(l_persons.get(0)));
+				l_sb.append("--------------------------\n");
+				l_sb.append(dumpPerson(l_persons.get(1)));
+				storedPerson = l_persons.get(0);
+				mainPanel.displayTextarea.setText(l_sb.toString());
+			}
+		});
+	}
+
+}}}
+
+The method "callRPC1" is called when the button "actionButton1" is pressed.
+
+===Adding PHP server side code===
+We need now to implement.
