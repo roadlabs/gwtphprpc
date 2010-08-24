@@ -13,3 +13,25 @@ The following step by step explanation is using [http://www.eclipse.org eclipse]
 First wou need to create a GWT project.
 
 http://gwtphprpc.googlecode.com/files/step1.png
+
+==Cleaning the sample project==
+You can then delete the following files which contains the source code for the default sample GWT application:
+  * GreetingService.java
+  * GreetingServiceAsync.java
+  * GreetingServiceImpl.java
+  * FieldVerifier.java
+
+Then, open the war/WEB-INF/web.xml file and modify it so that it looks like this:
+{{{
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+  <!-- Default page to serve -->
+  <welcome-file-list>
+    <welcome-file>GwtPhpRpcSample.html</welcome-file>
+  </welcome-file-list>
+
+</web-app>
+}}}
