@@ -103,3 +103,6 @@ This code defines:
   * 2 remote service (methods to be implemented in PHP and exposing remote features to GWT client)
     * getPersons (taking no parameters and returning an array of Person)
     * modifyPerson (which has a Person object as parameter and as result)
+
+==Installing the generator==
+
