@@ -185,3 +185,5 @@ First open the "GwtPhpRpcSample.gwt.xml" file and add the following code in the 
 
 These two "imports" are required for the RPC mechanism to work. Remember that it is based upon JSON-RPC (over HTTP obviously).
 ===Adding the client side code===
+Download the sample GWT java source code [http://gwtphprpc.googlecode.com/files/java_src_tutorial.zip here].
+Unzip the 3 source files (GwtPhpRpcSample.java, MainPanel.ui.xml, MainPanel.java) and copy them in the "src/com/test/client" directory of your project. The project space should now look like this:
