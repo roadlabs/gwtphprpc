@@ -2,9 +2,7 @@
 
 = Developer requirements =
 This tutorial requires at least a basic knowledge of GWT. It is recommended to complete the [http://code.google.com/webtoolkit/doc/latest/tutorial/index.html GWT tutorial] before starting this one.
-
 = System requirements =
-
 PhpRpcGen has been installed and tested with the following configuration:
   * GWT 2.0.4
   * PHP 5.3.1
