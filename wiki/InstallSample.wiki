@@ -1,6 +1,12 @@
 #summary How to install the sample application
 #sidebar SideBarPage
 
+----
+This tutorial is not yet completed.
+Please wait a few days.
+----
+
+
 <wiki:toc max_depth="2"/>
 
 = Developer requirements =
