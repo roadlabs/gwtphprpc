@@ -1,0 +1,9 @@
+#summary Download binary and source distributions
+
+The current version of the code is "alpha 1". It was not heavily tested but should be usable.
+
+Here are the download links:
+  * the binary distribution
+  * the source distribution (actually an export of an eclipse project, can be built with ANT)
+
+Here is also the code for the tutorial (see ).
