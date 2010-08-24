@@ -105,4 +105,6 @@ This code defines:
     * modifyPerson (which has a Person object as parameter and as result)
 
 ==Installing the generator==
-
+Creates a "lib" directory within the "rpc" directory that you previously created.
+Download the binary distribution of the generator (available there).
+And unzip it into a "lib" directory
