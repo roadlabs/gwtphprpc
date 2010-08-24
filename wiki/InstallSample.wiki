@@ -129,4 +129,8 @@ Open it, paste the following code and save:
 </project>
 }}}
 
-You then need to
+You can probably easily understand the meaning of the ANT task configuration:
+  * configFilePath: relative path to the XML configuration file
+  * javaSourcePath: relative path to the java source code directory
+  * phpSourcePath: relative path to the PHP source code directory
+  * keepServerCode: if true, the generator will take care to not overwrite the implementation code of the PHP remote service (see later)
