@@ -292,3 +292,18 @@ return $person;
 }}}
 
 This code get the Person object passed as a parameter, modifies it and returns it.
+
+=Build and Run=
+Launch the GWT compilation of the project.
+
+Once it is completed, open your browser at the specified address: http://localhost/gwtphprpc/GwtPhpRpcSample.html
+
+Then click first on the "getPersons" button.
+
+http://gwtphprpc.googlecode.com/files/step6.png
+
+Then click on the "modifyPerson" button.
+
+http://gwtphprpc.googlecode.com/files/step6.png
+
+Job done !
