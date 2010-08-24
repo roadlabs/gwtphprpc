@@ -55,7 +55,7 @@ public class GwtPhpRpcSample implements EntryPoint {
 You should not see any remaining error in eclipse.
 
 ==Setting up your web server==
-Configure your apache server so that "http://localhost/rpc/" will point to the content of the "war" folder. This is where we'll set the PHP files.
+Configure your apache server so that "http://localhost/gwtphprpc/" will point to the content of the "war" folder. This is where we'll set the PHP files.
 
 NB: I am commonly using [http://www.apachefriends.org/en/xampp.html XAMPP] as a PHP development environment. Try it !
 
@@ -115,11 +115,12 @@ This code defines:
 transfer objects and "com.test.client" for the remote service. 
 They match the package defined when we created the project. If you have chosen another package for the project then you'll need to modify the sample "config.xml" file.*
 
-==Installing the generator==
+==Running the generator==
+===Installing the generator===
 Creates a "lib" directory within the "rpc" directory that you previously created.
 Download the binary distribution of the generator (available there).
 And unzip it into a "lib" directory.
-
+===Creating the XML configuration file===
 Then creates a "build.xml" (the [http://ant.apache.org ANT]) file into the "rpc" directory.
 Open it, paste the following code and save:
 {{{
@@ -141,3 +142,12 @@ You can probably easily understand the meaning of the ANT task configuration:
   * javaSourcePath: relative path to the java source code directory
   * phpSourcePath: relative path to the PHP source code directory
   * keepServerCode: if true, the generator will take care to not overwrite the implementation code of the PHP remote service (see later)
+===Configuring and running the ANT task===
+Then right click on the "build.xml" file (the ANT one) and select "Run As > Ant build".
+The console will display:
+{{{
+BUILD FAILED
+}}}
+That's normal, no worry.
+
+
