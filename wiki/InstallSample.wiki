@@ -94,3 +94,12 @@ Open the XML file and paste the following code in it, then save:
 	</remote_services>
 </config>
 }}}
+
+This code defines:
+  * 3 transfer objects (data structure which are used to convey data accross the network)
+    * Person
+    * Hobby
+    * Contact
+  * 2 remote service (methods to be implemented in PHP and exposing remote features to GWT client)
+    * getPersons (taking no parameters and returning an array of Person)
+    * modifyPerson (which has a Person object as parameter and as result)
