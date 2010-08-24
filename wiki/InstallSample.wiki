@@ -107,4 +107,20 @@ This code defines:
 ==Installing the generator==
 Creates a "lib" directory within the "rpc" directory that you previously created.
 Download the binary distribution of the generator (available there).
-And unzip it into a "lib" directory
+And unzip it into a "lib" directory.
+
+Then creates a "build.xml" (the [http://ant.apache.org ANT]) file into the "rpc" directory.
+Open it, paste the following code and save:
+{{{
+<project name="PhpRPCGenerator" default="main" basedir=".">
+  <taskdef name="rpcgen" classname="com.pycloux.phpgen.PhpRpcGenTask"/>
+  <target name="main">
+    <rpcgen
+    	configFilePath="config.xml"
+    	javaSourcePath="../src"
+    	phpSourcePath="../war"
+    	keepServerCode="true"
+    />
+  </target>
+</project>
+}}}
