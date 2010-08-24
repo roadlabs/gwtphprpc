@@ -11,3 +11,4 @@ The following step by step explanation is using [http://www.eclipse.org eclipse]
 = Details =
 ==Creating a project==
 First wou need to create a GWT project
+http://gwtphprpc.googlecode.com/files/step1.png
