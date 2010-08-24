@@ -10,5 +10,6 @@ PhpRpcGen has been installed and tested with the following configuration:
 The following step by step explanation is using [http://www.eclipse.org eclipse] and the [http://code.google.com/eclipse/index.html Google Plugin], yet *there is no dependency between PhpRpcGen and eclipse*.
 = Details =
 ==Creating a project==
-First wou need to create a GWT project
+First wou need to create a GWT project.
+
 http://gwtphprpc.googlecode.com/files/step1.png
