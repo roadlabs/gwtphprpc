@@ -1,3 +1,4 @@
   * [http://code.google.com/p/gwtphprpc/ Home]
+  * [Download Download]
   * [InstallSample Tutorial]
   * [DevGuide Developer guide]
