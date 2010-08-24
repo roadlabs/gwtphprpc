@@ -83,7 +83,7 @@ Open the XML file and paste the following code in it, then save:
 			<attribute name="identity" type="String"/>
 		</object>
 	</transfer_objects>
-	<remote_services class="com.pyc.test.MyRemoteService">
+	<remote_services class="com.test.client.MyRemoteService">
 		<service method="getPersons">
 			<result type="Person[]"/>
 		</service>
@@ -103,6 +103,11 @@ This code defines:
   * 2 remote service (methods to be implemented in PHP and exposing remote features to GWT client)
     * getPersons (taking no parameters and returning an array of Person)
     * modifyPerson (which has a Person object as parameter and as result)
+
+  NB: please note that the target java package "com.test.client.to" for the
+  transfer objects and "com.test.client". They match the package defined when
+  we created the project. If you have chosen another package for the project then
+  you'll need to modify the sample "config.xml" file.
 
 ==Installing the generator==
 Creates a "lib" directory within the "rpc" directory that you previously created.
@@ -124,3 +129,5 @@ Open it, paste the following code and save:
   </target>
 </project>
 }}}
+
+You then need to
