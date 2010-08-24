@@ -154,3 +154,13 @@ Then open the eclipse ANT configuration tool.
 In the menu bar select "Run > External tools > External tools configuration...".
 This will open a window like this:
 
+http://gwtphprpc.googlecode.com/files/step3.png
+
+The attempt to run ANT (even if it resulted in a "BUILD FAILED" created a run configuration named "GwtPhpRpcSample build.xml".
+Click on the "classpath" tab and add all the jars of the rpc/lib directory.
+You "classpath" tab should looks like this:
+
+http://gwtphprpc.googlecode.com/files/step4.png
+
+
+
