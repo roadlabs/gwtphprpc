@@ -15,11 +15,11 @@ First wou need to create a GWT project.
 http://gwtphprpc.googlecode.com/files/step1.png
 
 ==Cleaning the sample project==
-You can then delete the following files which contains the source code for the default sample GWT application:
-  * GreetingService.java
-  * GreetingServiceAsync.java
-  * GreetingServiceImpl.java
-  * FieldVerifier.java
+You can then delete the following classes which contains the java source code for the default sample GWT application:
+  * GreetingService
+  * GreetingServiceAsync
+  * GreetingServiceImpl
+  * FieldVerifier
 
 Then, open the war/WEB-INF/web.xml file and modify it so that it looks like this:
 {{{
@@ -35,3 +35,23 @@ Then, open the war/WEB-INF/web.xml file and modify it so that it looks like this
 
 </web-app>
 }}}
+
+Open the java class GwtPhpRpcSample and modify it (erasing most of the content) so that it looks like this:
+{{{
+package com.test.client;
+
+import com.google.gwt.core.client.EntryPoint;
+
+public class GwtPhpRpcSample implements EntryPoint {
+	public void onModuleLoad() {
+	}
+}
+}}}
+
+You should not see any remaining error in eclipse.
+
+==Writting the PHP RPC configuration file==
+
+Creates a directory "rpc" at the root of the project. Then creates an XML file "config.xml" in this directory.
+Your project view should now looks like this:
+
