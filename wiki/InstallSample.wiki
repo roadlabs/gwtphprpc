@@ -1,5 +1,5 @@
 #summary How to install the sample application
-#sidebar TableOfContents
+#sidebar SideBarPage
 
 = Developer requirements =
 This tutorial requires at least a basic knowledge of GWT. It is recommended to complete the [http://code.google.com/webtoolkit/doc/latest/tutorial/index.html GWT tutorial] before starting this one.
