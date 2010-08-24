@@ -300,10 +300,10 @@ Once it is completed, open your browser at the specified address: http://localho
 
 Then click first on the "getPersons" button.
 
-http://gwtphprpc.googlecode.com/files/step6.png
+http://gwtphprpc.googlecode.com/files/step7.png
 
 Then click on the "modifyPerson" button.
 
-http://gwtphprpc.googlecode.com/files/step6.png
+http://gwtphprpc.googlecode.com/files/step8.png
 
 Job done !
