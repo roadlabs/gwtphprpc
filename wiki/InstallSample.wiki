@@ -104,10 +104,9 @@ This code defines:
     * getPersons (taking no parameters and returning an array of Person)
     * modifyPerson (which has a Person object as parameter and as result)
 
-  NB: please note that the target java package "com.test.client.to" for the
-  transfer objects and "com.test.client". They match the package defined when
-  we created the project. If you have chosen another package for the project then
-  you'll need to modify the sample "config.xml" file.
+*NB: please note the target java package "com.test.client.to" for the
+transfer objects and "com.test.client" for the remote service. 
+They match the package defined when we created the project. If you have chosen another package for the project then you'll need to modify the sample "config.xml" file.*
 
 ==Installing the generator==
 Creates a "lib" directory within the "rpc" directory that you previously created.
