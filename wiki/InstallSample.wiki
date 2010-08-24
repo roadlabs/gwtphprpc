@@ -118,7 +118,7 @@ They match the package defined when we created the project. If you have chosen a
 =Running the generator=
 ==Installing the generator==
 Creates a "lib" directory within the "rpc" directory that you previously created.
-Download the binary distribution of the generator (available there).
+Download the [http://gwtphprpc.googlecode.com/files/phprpcgen_bin_alpha1.zip binary distribution] of the generator (available there).
 And unzip it into a "lib" directory.
 ==Creating the XML configuration file==
 Then creates a "build.xml" (the [http://ant.apache.org ANT]) file into the "rpc" directory.
