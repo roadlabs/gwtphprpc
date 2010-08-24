@@ -230,6 +230,37 @@ private final void callRPC1() {
 }}}
 
 The method "callRPC1" is called when the button "actionButton1" is pressed.
+Please note that the "MyRemoteServiceClient.getPersons" implementation is expecting an "AsyncCallback" object (see the GWT documentation).
 
 ===Adding PHP server side code===
-We need now to implement.
+We need now to implement the PHP server code.
+Open the "war/getPersons_server.php" file and paste (in the "getPersons" method body, between the "Custom code" comments) the following code:
+{{{
+$person1=new Person();
+$person1->firstName="James";
+$person1->lastName="Bond";
+$person1->age=40;
+$person1->size=1.80;
+$person1->skills=array("killing bad guys");
+$person1->childrenAges=array();
+$person1->hobby=new Hobby();
+$person1->hobby->description="women";
+$person1->smart=true;
+
+$person2=new Person();
+$person2->firstName="Mister";
+$person2->lastName="Bean";
+$person2->age=35;
+$person2->size=1.75;
+$person2->skills=array("making stupid things");
+$person2->childrenAges=array();
+$person2->contacts=array();
+
+$contact=new Contact();
+$contact->identity="Bozo the clown";
+$person2->contacts[]=$contact;
+
+$person2->smart=false;
+
+return array($person1, $person2);
+}}}
