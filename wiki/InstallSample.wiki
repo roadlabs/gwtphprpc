@@ -234,6 +234,7 @@ Please note that the "MyRemoteServiceClient.getPersons" implementation is expect
 
 ===Adding PHP server side code===
 We need now to implement the PHP server code.
+====Implementation of the getPersons remote service===
 Open the "war/getPersons_server.php" file and paste (in the "getPersons" method body, between the "Custom code" comments) the following code:
 {{{
 $person1=new Person();
@@ -264,3 +265,24 @@ $person2->smart=false;
 
 return array($person1, $person2);
 }}}
+
+This code simply creates two Person objects and returns them.
+
+====Implementation of the modifyPerson remote service===
+Open the "war/modifyPerson_server.php" file and paste (in the "modifyPersons" method body, between the "Custom code" comments) the following code:
+{{{
+$person->fullName=$person->firstName . " " . $person->lastName;
+$person->size=$person->size-0.1;
+$person->skills[]="yes " . time();
+$person->childrenAges[]=10;
+$person->childrenAges[]=5;
+$contact1=new Contact();
+$contact1->identity="Goldfinger";
+$contact2=new Contact();
+$contact2->identity="Scaramanga";
+$person->contacts[]=$contact1;
+$person->contacts[]=$contact2;
+return $person;
+}}}
+
+This code get the Person object passed as a parameter, modifies it and returns it.
