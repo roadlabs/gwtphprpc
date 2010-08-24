@@ -1,6 +1,8 @@
 #summary How to install the sample application
 #sidebar SideBarPage
 
+<wiki:toc max_depth="2"/>
+
 = Developer requirements =
 This tutorial requires at least a basic knowledge of GWT. It is recommended to complete the [http://code.google.com/webtoolkit/doc/latest/tutorial/index.html GWT tutorial] before starting this one.
 = System requirements =
@@ -55,3 +57,40 @@ You should not see any remaining error in eclipse.
 Creates a directory "rpc" at the root of the project. Then creates an XML file "config.xml" in this directory.
 Your project view should now looks like this:
 
+http://gwtphprpc.googlecode.com/files/step2.png
+
+Open the XML file and paste the following code in it, then save:
+{{{
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<transfer_objects package="com.test.client.to">
+		<object name="Person">
+			<attribute name="firstName" type="String"/>
+			<attribute name="lastName" type="String"/>
+			<attribute name="fullName" type="String"/>
+			<attribute name="age" type="int"/>
+			<attribute name="size" type="double"/>
+			<attribute name="skills" type="String[]"/>
+			<attribute name="childrenAges" type="int[]"/>
+			<attribute name="hobby" type="Hobby"/>
+			<attribute name="contacts" type="Contact[]"/>
+			<attribute name="smart" type="boolean"/>
+		</object>
+		<object name="Hobby">
+			<attribute name="description" type="String"/>
+		</object>
+		<object name="Contact">
+			<attribute name="identity" type="String"/>
+		</object>
+	</transfer_objects>
+	<remote_services class="com.pyc.test.MyRemoteService">
+		<service method="getPersons">
+			<result type="Person[]"/>
+		</service>
+		<service method="modifyPerson">
+			<params type="Person"/>
+			<result type="Person"/>
+		</service>
+	</remote_services>
+</config>
+}}}
