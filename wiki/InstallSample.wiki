@@ -5,6 +5,8 @@
 
 = Developer requirements =
 This tutorial requires at least a basic knowledge of GWT. It is recommended to complete the [http://code.google.com/webtoolkit/doc/latest/tutorial/index.html GWT tutorial] before starting this one.
+It is also assumed that you are familiar with PHP/Apache server configuration.
+
 = System requirements =
 PhpRpcGen has been installed and tested with the following configuration:
   * GWT 2.0.4
@@ -51,6 +53,11 @@ public class GwtPhpRpcSample implements EntryPoint {
 }}}
 
 You should not see any remaining error in eclipse.
+
+==Setting up your web server==
+Configure your apache server so that "http://localhost/rpc/" will point to the content of the "war" folder. This is where we'll set the PHP files.
+
+NB: I am commonly using [http://www.apachefriends.org/en/xampp.html XAMPP] as a PHP development environment. Try it !
 
 ==Writting the PHP RPC configuration file==
 
