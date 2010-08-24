@@ -150,4 +150,7 @@ BUILD FAILED
 }}}
 That's normal, no worry.
 
+Then open the eclipse ANT configuration tool.
+In the menu bar select "Run > External tools > External tools configuration...".
+This will open a window like this:
 
