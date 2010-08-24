@@ -18,13 +18,13 @@ PhpRpcGen has been installed and tested with the following configuration:
   * GWT 2.0.4
   * PHP 5.3.1
 The following step by step explanation is using [http://www.eclipse.org eclipse] and the [http://code.google.com/eclipse/index.html Google Plugin], yet *there is no dependency between PhpRpcGen and eclipse*.
-= Details =
-==Creating a project==
+
+=Creating a project=
 First wou need to create a GWT project.
 
 http://gwtphprpc.googlecode.com/files/step1.png
 
-==Cleaning the sample project==
+=Cleaning the sample project=
 You can then delete the following classes which contains the java source code for the default sample GWT application:
   * GreetingService
   * GreetingServiceAsync
@@ -60,12 +60,12 @@ public class GwtPhpRpcSample implements EntryPoint {
 
 You should not see any remaining error in eclipse.
 
-==Setting up your web server==
+=Setting up your web server=
 Configure your apache server so that "http://localhost/gwtphprpc/" will point to the content of the "war" folder. This is where we'll set the PHP files.
 
 NB: I am commonly using [http://www.apachefriends.org/en/xampp.html XAMPP] as a PHP development environment. Try it !
 
-==Writting the PHP RPC configuration file==
+=Writting the PHP RPC configuration file=
 
 Creates a directory "rpc" at the root of the project. Then creates an XML file "config.xml" in this directory.
 Your project view should now looks like this:
@@ -121,12 +121,12 @@ This code defines:
 transfer objects and "com.test.client" for the remote service. 
 They match the package defined when we created the project. If you have chosen another package for the project then you'll need to modify the sample "config.xml" file.*
 
-==Running the generator==
-===Installing the generator===
+=Running the generator=
+==Installing the generator==
 Creates a "lib" directory within the "rpc" directory that you previously created.
 Download the binary distribution of the generator (available there).
 And unzip it into a "lib" directory.
-===Creating the XML configuration file===
+==Creating the XML configuration file==
 Then creates a "build.xml" (the [http://ant.apache.org ANT]) file into the "rpc" directory.
 Open it, paste the following code and save:
 {{{
@@ -149,7 +149,7 @@ You can probably easily understand the meaning of the ANT task configuration:
   * phpSourcePath: relative path to the PHP source code directory
   * keepServerCode: if true, the generator will take care to not overwrite the implementation code of the PHP remote service (see later)
 
-===Configuring and running the ANT task===
+==Configuring and running the ANT task==
 Then right click on the "build.xml" file (the ANT one) and select "Run As > Ant build".
 The console will display:
 {{{
@@ -172,17 +172,17 @@ http://gwtphprpc.googlecode.com/files/step4.png
 
 Then click on the "Run" button to trigger the code generation (which should end with a "BUILD SUCCESSFUL" now).
 
-==Adding a bit of code==
-===A bunch of generated code===
+=Adding a bit of code=
+==A bunch of generated code==
 Your project space (after a F5 refresh) now contains a lot of newly generated files:
 
 http://gwtphprpc.googlecode.com/files/step5.png
 
 Some Java files have been generated in the "src" directory and some PHP files in the "war" directory.
  
-===Coding the GWT client===
+==Coding the GWT client==
 It is now time to code my GWT client.
-====Modifying the GWT module configuration===
+===Modifying the GWT module configuration==
 First open the "GwtPhpRpcSample.gwt.xml" file and add the following code in the module configuration:
 {{{
   <inherits name='com.google.gwt.http.HTTP' />
@@ -190,7 +190,7 @@ First open the "GwtPhpRpcSample.gwt.xml" file and add the following code in the 
 }}}
 
 These two "imports" are required for the RPC mechanism to work. Remember that it is based upon JSON-RPC (over HTTP obviously).
-===Adding the client side code===
+==Adding the client side code==
 Download the sample GWT java source code [http://gwtphprpc.googlecode.com/files/java_src_tutorial.zip here].
 Unzip the 3 source files (GwtPhpRpcSample.java, MainPanel.ui.xml, MainPanel.java) and copy them in the "src/com/test/client" directory of your project. The project space should now look like this:
 
@@ -238,9 +238,9 @@ private final void callRPC1() {
 The method "callRPC1" is called when the button "actionButton1" is pressed.
 Please note that the "MyRemoteServiceClient.getPersons" implementation is expecting an "AsyncCallback" object (see the GWT documentation).
 
-===Adding PHP server side code===
+==Adding PHP server side code==
 We need now to implement the PHP server code.
-====Implementation of the getPersons remote service===
+===Implementation of the getPersons remote service==
 Open the "war/getPersons_server.php" file and paste (in the "getPersons" method body, between the "Custom code" comments) the following code:
 {{{
 $person1=new Person();
@@ -274,7 +274,7 @@ return array($person1, $person2);
 
 This code simply creates two Person objects and returns them.
 
-====Implementation of the modifyPerson remote service===
+===Implementation of the modifyPerson remote service==
 Open the "war/modifyPerson_server.php" file and paste (in the "modifyPersons" method body, between the "Custom code" comments) the following code:
 {{{
 $person->fullName=$person->firstName . " " . $person->lastName;
