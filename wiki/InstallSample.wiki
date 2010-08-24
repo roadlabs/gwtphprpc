@@ -142,6 +142,7 @@ You can probably easily understand the meaning of the ANT task configuration:
   * javaSourcePath: relative path to the java source code directory
   * phpSourcePath: relative path to the PHP source code directory
   * keepServerCode: if true, the generator will take care to not overwrite the implementation code of the PHP remote service (see later)
+
 ===Configuring and running the ANT task===
 Then right click on the "build.xml" file (the ANT one) and select "Run As > Ant build".
 The console will display:
@@ -156,11 +157,17 @@ This will open a window like this:
 
 http://gwtphprpc.googlecode.com/files/step3.png
 
-The attempt to run ANT (even if it resulted in a "BUILD FAILED" created a run configuration named "GwtPhpRpcSample build.xml".
-Click on the "classpath" tab and add all the jars of the rpc/lib directory.
-You "classpath" tab should looks like this:
+The attempt to run ANT (even if it resulted in a "BUILD FAILED") created a run configuration named "GwtPhpRpcSample build.xml".
+Clicks on the "classpath" tab and add all the jars of the rpc/lib directory.
+
+Your "classpath" tab should now look like this:
 
 http://gwtphprpc.googlecode.com/files/step4.png
 
+Then click on the "Run" button to trigger the code generation (which should end with a "BUILD SUCCESSFUL" now).
+
+==Adding a bit of code==
+
+Your project space now contains a lot of newly generated files:
 
 
