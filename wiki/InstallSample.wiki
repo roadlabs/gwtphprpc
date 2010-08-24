@@ -1,0 +1,12 @@
+#summary How to install the sample application
+
+= System requirements =
+
+PhpRpcGen has been installed and tested with the following configuration:
+  * GWT 2.0.4
+  * PHP 5.3.1
+
+The following step by step explanation is using [http://www.eclipse.org eclipse] and the [http://code.google.com/eclipse/index.html Google Plugin].
+There is no dependency between PhpRpcGen.
+
+= Details =
