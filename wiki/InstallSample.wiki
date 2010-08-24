@@ -1,5 +1,8 @@
 #summary How to install the sample application
 
+= Developer requirements =
+This tutorial requires at least a basic knowledge of GWT. It is recommended to complete the [http://code.google.com/webtoolkit/doc/latest/tutorial/index.html GWT tutorial] before starting this one.
+
 = System requirements =
 
 PhpRpcGen has been installed and tested with the following configuration:
@@ -8,3 +11,5 @@ PhpRpcGen has been installed and tested with the following configuration:
 The following step by step explanation is using [http://www.eclipse.org eclipse] and the [http://code.google.com/eclipse/index.html Google Plugin], yet *there is no dependency between PhpRpcGen and eclipse*.
 
 = Details =
+==Creating a project==
+First wou need to create a GWT project
