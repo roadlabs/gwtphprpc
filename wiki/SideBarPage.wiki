@@ -1,2 +1,3 @@
   * [http://code.google.com/p/gwtphprpc/ Home]
   * [InstallSample Tutorial]
+  * [DevGuide Developer guide]
