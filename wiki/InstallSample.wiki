@@ -1,4 +1,4 @@
-#summary How to install the sample application
+#summary A step by step example
 #sidebar SideBarPage
 
 <wiki:toc max_depth="2"/>
