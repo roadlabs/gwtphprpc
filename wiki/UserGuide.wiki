@@ -31,3 +31,10 @@ The configuration file is divided into two main sections:
 	</remote_services>
 </config>
 }}}
+
+==Transfer objects==
+The main element has a "package" parameter:
+{{{
+<transfer_objects package="com.pyc.client.to">
+}}}
+All the transfer objects defined by one XML configuration file are generated in the same Java package.
