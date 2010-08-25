@@ -67,9 +67,9 @@ Here are the types which are supported for object attributes in the XML configur
 || int || int ||
 || double || double ||
 || String`[]` || com.google.gwt.core.client.JsArrayString ||
-|| boolean[] || com.google.gwt.core.client.JsArrayBoolean ||
-|| int[] || com.google.gwt.core.client.JsArrayInteger ||
-|| double[] || com.google.gwt.core.client.JsArrayNumber ||
+|| boolean`[]` || com.google.gwt.core.client.JsArrayBoolean ||
+|| int`[]` || com.google.gwt.core.client.JsArrayInteger ||
+|| double`[]` || com.google.gwt.core.client.JsArrayNumber ||
 
 An attribute can also have an "Object" type. In such case, the type must be specified in a `<object>` element of the same XML file.
 Example: the "hobby" attribute of the "Person" object (see above in this page):
