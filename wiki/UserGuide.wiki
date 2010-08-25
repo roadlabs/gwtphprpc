@@ -292,6 +292,7 @@ public abstract class MyRemoteServiceClient extends JSONRPCRootClient{
 }
 }}}
 ====The generated PHP code====
+{{{
 <?php
 include_once 'jsonrpcphp/jsonRPCServer.php';
 include_once 'jsonrpcphp/rpc_server_wrapper.php';
@@ -311,5 +312,36 @@ class GetPersonsServer{
 	}
 }
 ?>
-
+}}}
 =Coding=
+The remote method code is to be inserted in the PHP server code.
+Some editable sections are identified by some special comments:
+{{{
+public function getPersons(){
+//!!!-----Custom code------
+...
+//!!!----------------------
+}
+}}}
+
+The custome source code inserted between these comments will not be overwritten (if the "keepServerCode" parameter of the ANT task is set to "true").
+=The ANT task=
+{{{
+<project name="PhpRPCGenerator" default="main" basedir=".">
+  <taskdef name="rpcgen" classname="com.pycloux.phpgen.PhpRpcGenTask"/>
+  <target name="main">
+    <rpcgen
+    	configFilePath="config.xml"
+    	javaSourcePath="../src"
+    	phpSourcePath="../war"
+    	keepServerCode="true"
+    />
+  </target>
+</project>
+}}}
+
+You can probably easily understand the meaning of the ANT task configuration parameters:
+  * configFilePath: relative path to the XML configuration file
+  * javaSourcePath: relative path to the java source code directory
+  * phpSourcePath: relative path to the PHP source code directory
+  * keepServerCode: if true, the generator will take care not to overwrite the implementation code of the PHP remote service
