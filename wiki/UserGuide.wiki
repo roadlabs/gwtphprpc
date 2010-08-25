@@ -1,2 +1,15 @@
 #summary How to configure and use the generator
 #sidebar SideBarPage
+
+=System requirements=
+PhpRpcGen has been installed and tested with the following configuration:
+    * GWT 2.0.4
+    * PHP 5.3.1
+
+Your GWT module must imports the following libraries
+{{{
+<inherits name='com.google.gwt.http.HTTP' />
+<inherits name='com.google.gwt.json.JSON' />
+}}}
+
+The PhpRpcGen generator is distributed as a set of JAR files: phpgen.jar + the libraries it depends on (see Download section and DevGuide)
