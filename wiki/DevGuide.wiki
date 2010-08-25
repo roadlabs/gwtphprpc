@@ -1,2 +1,5 @@
 #summary How is developed the code generator
 #sidebar SideBarPage
+
+=Dependencies=
+The generator is 
