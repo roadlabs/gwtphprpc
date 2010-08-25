@@ -12,4 +12,4 @@ Your GWT module must imports the following libraries
 <inherits name='com.google.gwt.json.JSON' />
 }}}
 
-The PhpRpcGen generator is distributed as a set of JAR files: phpgen.jar + the libraries it depends on (see Download section and DevGuide)
+The PhpRpcGen generator is distributed as a set of JAR files: phpgen.jar + the libraries it depends on (see [Download Download] section and the [DevGuide Developer guide])
