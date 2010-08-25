@@ -1,2 +1,2 @@
 #summary How to configure and use the generator
-
+#sidebar SideBarPage
