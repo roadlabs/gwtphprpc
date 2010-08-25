@@ -34,7 +34,7 @@ The configuration file is divided into two main sections:
 </config>
 }}}
 
-==Transfer objects==
+==transfert_objects section==
 The main element has a "package" parameter:
 {{{
 <transfer_objects package="com.pyc.client.to">
@@ -250,3 +250,18 @@ class Person{
 }}}
 
 The $OBJECTS_METADATA class variable is required for the serialization/unserialization activities.
+
+==The remote_services section==
+
+This section of the XML configuration file is used to define the interface of the remote service.
+Example:
+{{{
+<service method="modifyPerson">
+	<params type="Person"/>
+	<result type="Person"/>
+</service>
+}}}
+The XML above specifies a method named "modifyPerson" with an input parameter as a Person instance and a result parameter also as a Person.
+
+*WARNING: only object types are allowed as input and result parameters for remote service*
+
