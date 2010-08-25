@@ -1,2 +1,2 @@
-#summary How to use GwtPhpRPC code generator
+#summary How is developed the code generator
 #sidebar SideBarPage
