@@ -276,7 +276,7 @@ Example:
 ----
 
 ===A complete example===
-====The XML configuration====
+====The XML configuration structure====
 {{{
 <service method="getPersons">
 	<result type="Person[]"/>
@@ -291,5 +291,25 @@ public abstract class MyRemoteServiceClient extends JSONRPCRootClient{
 ...
 }
 }}}
-
 ====The generated PHP code====
+<?php
+include_once 'jsonrpcphp/jsonRPCServer.php';
+include_once 'jsonrpcphp/rpc_server_wrapper.php';
+include_once 'person.php';
+//!!!-----Custom code------
+
+//!!!----------------------
+
+jsonRPCServer::handle(new RPCServerWrapper(null,new GetPersonsServer()));
+
+//RPC service implementation
+class GetPersonsServer{
+		public function getPersons(){
+//!!!-----Custom code------
+...
+//!!!----------------------
+	}
+}
+?>
+
+=Coding=
