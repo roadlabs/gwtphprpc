@@ -17,8 +17,8 @@ The PhpRpcGen generator is distributed as a set of JAR files: phpgen.jar + the l
 =Configuration file=
 ==Two main sections==
 The configuration file is divided into two main sections:
-  * the '<transfer_objects>' element which defines the data structures used as parameters for the remote methods
-  * the '<remote_services>' element which defines the remote method interfaces (which should make use of the previously defined "transfer objects" as parameter and result.
+  * the `<transfer_objects>` element which defines the data structures used as parameters for the remote methods
+  * the `<remote_services>` element which defines the remote method interfaces (which should make use of the previously defined "transfer objects" as parameter and result.
 
 {{{
 <?xml version="1.0" encoding="UTF-8"?>
@@ -39,7 +39,7 @@ The main element has a "package" parameter:
 }}}
 All the transfer objects defined by one XML configuration file are generated in the same Java package.
 =Object specifications=
-Within the "transfer_objects" element you can find one or more '<object>' elements:
+Within the "transfer_objects" element you can find one or more `<object>` elements:
 {{{
 <object name="Person">
 	<attribute name="firstName" type="String"/>
@@ -66,12 +66,12 @@ Here are the types which are supported for object attributes in the XML configur
 || boolean || boolean ||
 || int || int ||
 || double || double ||
-|| String<pre>[]</pre> || com.google.gwt.core.client.JsArrayString ||
+|| String`[]` || com.google.gwt.core.client.JsArrayString ||
 || boolean[] || com.google.gwt.core.client.JsArrayBoolean ||
 || int[] || com.google.gwt.core.client.JsArrayInteger ||
 || double[] || com.google.gwt.core.client.JsArrayNumber ||
 
-An attribute can also have an "Object" type. In such case, the type must be specified in a '<object>' element of the same XML file.
+An attribute can also have an "Object" type. In such case, the type must be specified in a `<object>` element of the same XML file.
 Example: the "hobby" attribute of the "Person" object (see above in this page):
 {{{
 <attribute name="hobby" type="Hobby"/>
