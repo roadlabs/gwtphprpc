@@ -38,3 +38,34 @@ The main element has a "package" parameter:
 <transfer_objects package="com.pyc.client.to">
 }}}
 All the transfer objects defined by one XML configuration file are generated in the same Java package.
+=Object specifications=
+Within the "transfer_objects" element you can find one or more <object> elements:
+{{{
+<object name="Person">
+	<attribute name="firstName" type="String"/>
+	<attribute name="lastName" type="String"/>
+	<attribute name="fullName" type="String"/>
+	<attribute name="age" type="int"/>
+	<attribute name="size" type="double"/>
+	<attribute name="skills" type="String[]"/>
+	<attribute name="childrenAges" type="int[]"/>
+	<attribute name="hobby" type="Hobby"/>
+	<attribute name="contacts" type="Contact[]"/>
+	<attribute name="smart" type="boolean"/>
+</object>
+}}}
+
+An object has a name (must be capitalized) to be used as a class name in the generated Java and PHP code.
+An oject has multiple "attributes".
+
+=Supported attribute types=
+
+|| *XML configuration type* || *Java type* ||
+|| String || String ||
+|| boolean || boolean ||
+|| int || int ||
+|| double || double ||
+|| String[] || com.google.gwt.core.client.JsArrayString ||
+|| boolean[] || com.google.gwt.core.client.JsArrayBoolean ||
+|| int[] || com.google.gwt.core.client.JsArrayInteger ||
+|| double[] || com.google.gwt.core.client.JsArrayNumber ||
