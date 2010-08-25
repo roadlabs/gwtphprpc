@@ -66,7 +66,7 @@ Here are the types which are supported for object attributes in the XML configur
 || boolean || boolean ||
 || int || int ||
 || double || double ||
-|| String[] || com.google.gwt.core.client.JsArrayString ||
+|| String[[]] || com.google.gwt.core.client.JsArrayString ||
 || boolean[] || com.google.gwt.core.client.JsArrayBoolean ||
 || int[] || com.google.gwt.core.client.JsArrayInteger ||
 || double[] || com.google.gwt.core.client.JsArrayNumber ||
