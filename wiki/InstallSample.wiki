@@ -205,7 +205,7 @@ Example: line 21 ro 26 in GwtPhpRpcSample.java
 and
 {{{
 private final void callRPC1() {
-		String l_url = "http://localhost/rpc/getPersons_server.php";
+		String l_url = "http://localhost/gwtphprpc/getPersons_server.php";
 		MyRemoteServiceClient.getPersons(l_url, new AsyncCallback<JavaScriptObject>() {
 			@Override
 			public void onFailure(Throwable caught) {
