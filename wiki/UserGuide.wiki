@@ -82,3 +82,12 @@ should be defined in the same XML file as
 	<attribute name="description" type="String"/>
 </object>
 }}}
+
+It is even possible to define attributes with an Object array type.
+Example: the "contact" attribute of the "Person" object (see above in this page):
+{{{
+<attribute name="contacts" type="Contact[]"/>
+}}}
+
+*WARNING*
+The "Contact[]" will be generated, in GWT Java, as com.google.gwt.core.client.JsArray`<Contact>`.
