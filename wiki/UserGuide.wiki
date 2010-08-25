@@ -1,6 +1,8 @@
 #summary How to configure and use the generator
 #sidebar SideBarPage
 
+<wiki:toc max_depth="4"/>
+
 =System requirements=
 PhpRpcGen has been installed and tested with the following configuration:
     * GWT 2.0.4
@@ -38,7 +40,7 @@ The main element has a "package" parameter:
 <transfer_objects package="com.pyc.client.to">
 }}}
 All the transfer objects defined by one XML configuration file are generated in the same Java package.
-=Object specifications=
+===Object specifications===
 Within the "transfer_objects" element you can find one or more `<object>` elements:
 {{{
 <object name="Person">
@@ -58,7 +60,7 @@ Within the "transfer_objects" element you can find one or more `<object>` elemen
 An object has a name (must be capitalized) to be used as a class name in the generated Java and PHP code.
 An oject has multiple "attributes".
 
-=Supported attribute types=
+===Supported attribute types===
 Here are the types which are supported for object attributes in the XML configuration file. The table also contains the corresponding GWT-Java types.
 
 || *XML configuration type* || *Java type* ||
@@ -91,3 +93,160 @@ Example: the "contact" attribute of the "Person" object (see above in this page)
 
 *WARNING*
 The "Contact[]" will be generated, in GWT Java, as com.google.gwt.core.client.JsArray`<Contact>`.
+
+===A complete example===
+====The XML configuration structure====
+{{{
+<object name="Person">
+	<attribute name="firstName" type="String"/>
+	<attribute name="lastName" type="String"/>
+	<attribute name="fullName" type="String"/>
+	<attribute name="age" type="int"/>
+	<attribute name="size" type="double"/>
+	<attribute name="skills" type="String[]"/>
+	<attribute name="childrenAges" type="int[]"/>
+	<attribute name="hobby" type="Hobby"/>
+	<attribute name="contacts" type="Contact[]"/>
+	<attribute name="smart" type="boolean"/>
+</object>
+}}}
+====The generated GWT java code====
+{{{
+package com.test.client.to;
+
+public class Person extends com.google.gwt.core.client.JavaScriptObject {
+	protected Person() {
+	}
+
+	public static native Person create() /*-{
+		return {};
+	}-*/;
+
+	public final native String getFirstName() /*-{
+		return this.firstName;
+	}-*/;
+
+	public final native void setFirstName(String p_firstName) /*-{
+		this.firstName=p_firstName;
+	}-*/;
+
+	public final native String getLastName() /*-{
+		return this.lastName;
+	}-*/;
+
+	public final native void setLastName(String p_lastName) /*-{
+		this.lastName=p_lastName;
+	}-*/;
+
+	public final native String getFullName() /*-{
+		return this.fullName;
+	}-*/;
+
+	public final native void setFullName(String p_fullName) /*-{
+		this.fullName=p_fullName;
+	}-*/;
+
+	public final native int getAge() /*-{
+		return this.age;
+	}-*/;
+
+	public final native void setAge(int p_age) /*-{
+		this.age=p_age;
+	}-*/;
+
+	public final native double getSize() /*-{
+		return this.size;
+	}-*/;
+
+	public final native void setSize(double p_size) /*-{
+		this.size=p_size;
+	}-*/;
+
+	public final native com.google.gwt.core.client.JsArrayString getSkills() /*-{
+		if(this.skills==null){
+		this.skills=new Array();
+		}
+				return this.skills;
+	}-*/;
+
+	public final native void setSkills(
+			com.google.gwt.core.client.JsArrayString p_skills) /*-{
+		this.skills=p_skills;
+	}-*/;
+
+	public final native com.google.gwt.core.client.JsArrayInteger getChildrenAges() /*-{
+		if(this.childrenAges==null){
+		this.childrenAges=new Array();
+		}
+				return this.childrenAges;
+	}-*/;
+
+	public final native void setChildrenAges(
+			com.google.gwt.core.client.JsArrayInteger p_childrenAges) /*-{
+		this.childrenAges=p_childrenAges;
+	}-*/;
+
+	public final native com.test.client.to.Hobby getHobby() /*-{
+		return this.hobby;
+	}-*/;
+
+	public final native void setHobby(com.test.client.to.Hobby p_hobby) /*-{
+		this.hobby=p_hobby;
+	}-*/;
+
+	public final native com.google.gwt.core.client.JsArray<com.test.client.to.Contact> getContacts() /*-{
+		if(this.contacts==null){
+		this.contacts=new Array();
+		}
+				return this.contacts;
+	}-*/;
+
+	public final native void setContacts(
+			com.google.gwt.core.client.JsArray<com.test.client.to.Contact> p_contacts) /*-{
+		this.contacts=p_contacts;
+	}-*/;
+
+	public final native boolean getSmart() /*-{
+		if(this.smart==null){
+		this.smart=false;
+		}
+		return this.smart;
+	}-*/;
+
+	public final native void setSmart(boolean p_smart) /*-{
+		this.smart=p_smart;
+	}-*/;
+
+}
+}}}
+====The generated PHP code====
+{{{
+<?php
+include_once 'contact.php';
+include_once 'hobby.php';
+
+//Transfer object class
+class Person{
+	private static $OBJECTS_METADATA=array(
+			'hobby','Hobby',
+			'contacts','Contact[]',
+		);
+	public function getMETADATA() {
+		return self::$OBJECTS_METADATA;
+	}
+	
+	public $firstName;
+	public $lastName;
+	public $fullName;
+	public $age;
+	public $size;
+	public $skills;
+	public $childrenAges;
+	public $hobby;
+	public $contacts;
+	public $smart;
+}
+?>
+}}}
+
+The $OBJECTS_METADATA class variable is required for the serialization/unserialization activities.
