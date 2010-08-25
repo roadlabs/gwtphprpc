@@ -252,7 +252,6 @@ class Person{
 The $OBJECTS_METADATA class variable is required for the serialization/unserialization activities.
 
 ==The remote_services section==
-
 This section of the XML configuration file is used to define the interface of the remote service.
 Example:
 {{{
@@ -263,5 +262,34 @@ Example:
 }}}
 The XML above specifies a method named "modifyPerson" with an input parameter as a Person instance and a result parameter also as a Person.
 
+===Supported types===
+A remote method might have no input parameter but *must* have a result parameter.
+----
 *WARNING: only object types are allowed as input and result parameters for remote service*
+If you want to have a simple type parameter for a remote service you must define some "ValueHolder" transfer object.
+Example:
+{{{
+<object name="StringValueHolder">
+	<attribute name="stringValue" type="String"/>
+</object>
+}}}
+----
 
+===A complete example===
+====The XML configuration====
+{{{
+<service method="getPersons">
+	<result type="Person[]"/>
+</service>
+}}}
+====The generated GWT Java code====
+{{{
+public abstract class MyRemoteServiceClient extends JSONRPCRootClient{
+		public static final void getPersons(String p_url,AsyncCallback<JavaScriptObject> p_callBack) {
+		callJSONRPCService("getPersons",p_url, p_callBack);
+	}
+...
+}
+}}}
+
+====The generated PHP code====
